@@ -1,0 +1,15 @@
+.todo__user {
+  color: #fefefe;
+  background-color: #066AFE;
+  border-radius: 50px;
+  min-width: 24px;
+  height: 24px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}

@@ -1,0 +1,7 @@
+.todo__done {
+  visibility: hidden;
+}
+
+.todo__done_visible {
+  visibility: visible;
+}

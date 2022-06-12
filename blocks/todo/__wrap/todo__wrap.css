@@ -1,0 +1,13 @@
+.todo__wrap {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  transition: all 1s;
+  height: auto;
+  position: relative;
+}
+
+
+.todo__wrap.hide {
+  height: 2px;
+}

@@ -1,0 +1,22 @@
+.todo__dates {
+  color: #C2D0E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 8px 0;
+  
+}
+
+.todo__dates_edit {
+  position: relative;
+}
+
+.todo__dates_edit::after {
+  content: "";
+  width: 10px;
+  height: 12px;
+  background-image: url(../../../images/edit.svg);
+  background-repeat: no-repeat;
+
+}

@@ -1,0 +1,9 @@
+.todo__done-title {
+  margin: 40px auto 20px;
+  text-align: center;
+  font-family: 'Montserrat';
+  /* font-weight: 500; */
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 20px;
+}

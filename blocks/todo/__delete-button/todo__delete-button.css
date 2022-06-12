@@ -1,0 +1,40 @@
+
+.todo__delete-button {
+  background-color: var(--red);
+  border: none;
+  padding: 16px;
+  width: 68px;
+  height: 100%;
+  /* background-image: url(../../../images/deleteTest.svg);
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: center; */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  border-radius: 16px;
+  top: 0;
+  right: 0;
+  left: auto;
+  position: absolute;
+}
+
+.todo__delete-button::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/deleteTest.svg);
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: center;
+  position: absolute;
+  transition: transform 0.15s ease-in-out;
+  top: calc(50% - 12px);
+  right: calc(50% - 13px);
+}
+
+
+.todo__delete-button_active::after {
+  transform: scale(1.5);
+}
+

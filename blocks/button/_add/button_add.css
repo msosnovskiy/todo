@@ -1,0 +1,15 @@
+
+.button_add {
+  width: 68px;
+  height: 68px;
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  background-image: url(../../../images/add.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}

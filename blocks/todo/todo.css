@@ -1,0 +1,32 @@
+@import url(./__header/todo__header.css);
+@import url(./__user/todo__user.css);
+@import url(./__name/todo__name.css);
+@import url(./__delete/todo__delete.css);
+@import url(./__dates/todo__dates.css);
+@import url(./__date/todo__date.css);
+@import url(./__hour/todo__hour.css);
+@import url(./__lists/todo__lists.css);
+@import url(./__process/todo__process.css);
+
+
+@import url(./__wrap/todo__wrap.css);
+@import url(./__item/todo__item.css);
+@import url(./__item-name/todo__item-name.css);
+@import url(./__check-button/todo__check-button.css);
+@import url(./__delete-button-wrap/todo__delete-button-wrap.css);
+@import url(./__delete-button/todo__delete-button.css);
+
+
+@import url(./__form/todo__form.css);
+@import url(./__new-item/todo__new-item.css);
+@import url(./__add-button/todo__add-button.css);
+
+@import url(./__done/todo__done.css);
+@import url(./__done-title/todo__done-title.css);
+
+
+
+
+.todo {
+  padding: 60px 0;
+}
