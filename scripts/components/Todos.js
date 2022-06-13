@@ -142,12 +142,11 @@ class Todos {
       let x2 = event.touches[0].clientX;
       let buttonWidth = deleteButton.offsetWidth;
       let xDiff = null;
-      let centryX = 0;
 
       item.style.transitionDuration = '0s';
       !event.currentTarget.closest('[aria-label="for-delete"]') ? xDiff = x2 - x1 : xDiff = x2 - x1 - buttonWidth;
       this.xTransform = -xDiff;
-      let tempX = centryX + xDiff;
+      this.xTransform >= this.sizeToRemove ? deleteButton.classList.add('todo__delete-button_active') : deleteButton.classList.remove('todo__delete-button_active');
 
       if (xDiff <= 0) {
         // двтижение left
@@ -155,7 +154,6 @@ class Todos {
           xDiff = 0;
         }
 
-        this.xTransform >= this.sizeToRemove ? deleteButton.classList.add('todo__delete-button_active') : deleteButton.classList.remove('todo__delete-button_active');
         item.style.transform = `translateX(${xDiff}px)`;
 
       }

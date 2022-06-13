@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const element = new Element();
   const progress = new Progress(progressBar);
-  const todo = new Todo(todoLists, progress, process, done);
   const todos = new Todos(element, todoLists, progress, process, done);
   const formValidator = new FormValidator(todoLists, form, addItemButton, input, todos, progress);
   const switchPosition = new SwitchPosition(SwitchPositionButton);
