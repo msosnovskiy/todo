@@ -118,6 +118,7 @@ class Todos {
 
     // координата в момент начала тач события
     let x1 = null;
+    let y1 = null;
 
     checkButton.addEventListener('click', () => {
       this._closeOpenedForDelete(deleteButton);
@@ -134,36 +135,45 @@ class Todos {
 
     item.addEventListener('touchstart', (event) => {
       x1 = event.touches[0].clientX;
-    }, true);
-
-
+      y1 = event.touches[0].clientY;
+    });
 
     item.addEventListener('touchmove', (event) => {
       let x2 = event.touches[0].clientX;
+      let y2 = event.touches[0].clientY;
+
       let buttonWidth = deleteButton.offsetWidth;
+
       let xDiff = null;
+      let yDiff = y2 - y1;
+
 
       item.style.transitionDuration = '0s';
       !event.currentTarget.closest('[aria-label="for-delete"]') ? xDiff = x2 - x1 : xDiff = x2 - x1 - buttonWidth;
       this.xTransform = -xDiff;
       this.xTransform >= this.sizeToRemove ? deleteButton.classList.add('todo__delete-button_active') : deleteButton.classList.remove('todo__delete-button_active');
 
+      // if (Math.abs(xDiff) * 0.5 > + Math.abs(yDiff)) { 
+      //   event.preventDefault();
+      //   this._move(item, xDiff);
+      // }
+
       if (xDiff <= 0) {
         // двтижение left
-        if (xDiff > 0) {
-          xDiff = 0;
-        }
-
         item.style.transform = `translateX(${xDiff}px)`;
 
       }
+
+      // двтижение right
       else {
         if (xDiff > 0) {
           xDiff = 0;
         }
         item.style.transform = `translateX(${xDiff}px)`;
       };
-      item.style.transform = `translateX(${xDiff}px)`;
+
+
+      // item.style.transform = `translateX(${xDiff}px)`;
     });
 
 

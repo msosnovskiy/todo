@@ -1,10 +1,11 @@
 @keyframes newItem {
   0% {
-    box-shadow: 0px 0px 4px rgba(6, 106, 254, .5);
+    box-shadow: 0px 0px 8px rgba(6, 106, 254, .5);
   }
 
   100% {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04);
+
   }
 }
 
@@ -18,7 +19,7 @@
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04);
   margin: 8px auto 0px;
   animation: newItem .4s ease-in;
-  transition: box-shadow 0.2 ease-in-out;
+  transition: box-shadow 0.3 ease-in-out;
 }
 
 .todo__item_hide {
