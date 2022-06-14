@@ -6,7 +6,8 @@ class Todos {
     this.processContainer = processContainer;
     this.doneContainer = doneContainer;
     this.xTransform = 0;
-    this.sizeToRemove = this.container.offsetWidth * 0.35;
+    this.sizeToRemove = this.container.offsetWidth * 0.33;
+    this.touched = false;
   }
 
 
@@ -114,6 +115,23 @@ class Todos {
     })
   }
 
+  _move(item, xDiff) {
+    if (xDiff <= 0) {
+      // двтижение left
+      item.style.transform = `translateX(${xDiff}px)`;
+      console.log('1');
+    }
+
+    // двтижение right
+    else {
+      if (xDiff > 0) {
+        xDiff = 0;
+      }
+      console.log('2');
+      item.style.transform = `translateX(${xDiff}px)`;
+    };
+  }
+
   _setEventListeners(todo, item, name, checkButton, deleteWrap, deleteButton) {
 
     // координата в момент начала тач события
@@ -153,56 +171,52 @@ class Todos {
       this.xTransform = -xDiff;
       this.xTransform >= this.sizeToRemove ? deleteButton.classList.add('todo__delete-button_active') : deleteButton.classList.remove('todo__delete-button_active');
 
-      // if (Math.abs(xDiff) * 0.5 > + Math.abs(yDiff)) { 
-      //   event.preventDefault();
-      //   this._move(item, xDiff);
-      // }
-
-      if (xDiff <= 0) {
-        // двтижение left
-        item.style.transform = `translateX(${xDiff}px)`;
-
+      if (Math.abs(xDiff) * 0.4 <= + Math.abs(yDiff) && this.touched === false) {
+        return;
       }
 
-      // двтижение right
       else {
-        if (xDiff > 0) {
-          xDiff = 0;
-        }
-        item.style.transform = `translateX(${xDiff}px)`;
-      };
-
-
-      // item.style.transform = `translateX(${xDiff}px)`;
-    });
+        this.touched = true;
+        event.preventDefault();
+        this._move(item, xDiff);
+      }
+      
+    }, false);
 
 
     //действия с Todo 
     item.addEventListener('touchend', (event) => {
+      if (this.touched) {
 
-      // от 68px до 40% - возврат к кнопке удалить
-      if (this.xTransform >= 68 && this.xTransform < this.sizeToRemove) {
-        this._closeOpenedForDelete();
-        item.style.transitionDuration = '.2s';
-        item.setAttribute('aria-label', 'for-delete');
-        deleteButton.classList.add('todo__delete-button_active');
-        item.style.transform = `translateX(-68px)`;
+        // от 68px до 40% - возврат к кнопке удалить
+        if (this.xTransform >= 68 && this.xTransform < this.sizeToRemove) {
+          this._closeOpenedForDelete();
+          item.style.transitionDuration = '.2s';
+          item.setAttribute('aria-label', 'for-delete');
+          deleteButton.classList.add('todo__delete-button_active');
+          item.style.transform = `translateX(-68px)`;
+        }
+
+        // от 40% и выше - удаление с анимированием
+        else if (this.xTransform >= this.sizeToRemove) {
+          this._closeOpenedForDelete();
+          deleteButton.classList.add('todo__delete-button_active');
+          this._delete(item, deleteButton, deleteWrap, checkButton);
+        }
+
+        // до 68px - возврат в исходное состояние 
+        else {
+          deleteButton.classList.remove('todo__delete-button_active');
+          this._close(item);
+        }
+
+        this.xTransform = 0;
+        this.touched = false;
       }
 
-      // от 40% и выше - удаление с анимированием
-      else if (this.xTransform >= this.sizeToRemove) {
-        this._closeOpenedForDelete();
-        deleteButton.classList.add('todo__delete-button_active');
-        this._delete(item, deleteButton, deleteWrap, checkButton);
-      }
-
-      // до 68px - возврат в исходное состояние 
       else {
-        deleteButton.classList.remove('todo__delete-button_active');
-        this._close(item);
-      }
-
-      this.xTransform = 0;
+        return;
+      };
     })
 
     item.addEventListener('click', (event) => {
