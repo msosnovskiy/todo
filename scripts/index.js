@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const todoLists = document.querySelector('.todo__lists');
   const addItemButton = document.querySelector('.todo__add-button');
   const SwitchPositionButton = document.querySelector('.button_change');
-  const newTodoButton = document.querySelector('.button__change');
   const progressBar = document.querySelector('.progress');
   const process = document.querySelector('.todo__process');
   const done = document.querySelector('.todo__done');

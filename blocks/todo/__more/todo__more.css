@@ -1,0 +1,17 @@
+.todo__more {
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  position: relative;
+  background-image: url(../../../images/more.svg);
+  background-repeat: no-repeat;
+  /* background-position: right; */
+  min-width: 30px;
+  min-height: 30px;
+  background-color: transparent;
+  background-color: var(--gray);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+}

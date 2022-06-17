@@ -40,6 +40,7 @@ class Todos {
   _close(element) {
     element.style.transform = '';
     element.style.transitionDuration = '.2s';
+    element.classList.remove('todo__item_active');
     element.removeAttribute('aria-label');
   }
 
@@ -48,7 +49,7 @@ class Todos {
 
     wrap.style.height = `${item.offsetHeight - 2}px`;
     item.style.height = `${item.offsetHeight}px`;
-    item.style.transitionDuration = '0.175s';
+    item.style.transitionDuration = '.175s';
 
     item.style.transform = 'translateX(-100vw)';
 
@@ -57,9 +58,8 @@ class Todos {
       item.classList.add('todo__item_hide');
       checkButton.remove();
       name.textContent = '';
-
       wrap.style.height = '0px';
-      wrap.style.transitionDuration = '0.175s';
+      wrap.style.transitionDuration = '.175s';
       button.remove();
       wrap.classList.add('todo__delete-button-wrap_hide');
       clearInterval(animationInt);
@@ -116,18 +116,19 @@ class Todos {
   }
 
   _move(item, xDiff) {
+    item.style.transitionDuration = '0s';
     if (xDiff <= 0) {
       // двтижение left
+      item.classList.add('todo__item_active');
       item.style.transform = `translateX(${xDiff}px)`;
-      console.log('1');
     }
-
+    
     // двтижение right
     else {
       if (xDiff > 0) {
         xDiff = 0;
       }
-      console.log('2');
+      item.classList.remove('todo__item_active');
       item.style.transform = `translateX(${xDiff}px)`;
     };
   }
@@ -165,13 +166,11 @@ class Todos {
       let xDiff = null;
       let yDiff = y2 - y1;
 
-
-      item.style.transitionDuration = '0s';
       !event.currentTarget.closest('[aria-label="for-delete"]') ? xDiff = x2 - x1 : xDiff = x2 - x1 - buttonWidth;
       this.xTransform = -xDiff;
       this.xTransform >= this.sizeToRemove ? deleteButton.classList.add('todo__delete-button_active') : deleteButton.classList.remove('todo__delete-button_active');
 
-      if (Math.abs(xDiff) * 0.4 <= + Math.abs(yDiff) && this.touched === false) {
+      if (Math.abs(xDiff) * 0.3 <= + Math.abs(yDiff) && this.touched === false) {
         return;
       }
 
@@ -191,7 +190,7 @@ class Todos {
         // от 68px до 40% - возврат к кнопке удалить
         if (this.xTransform >= 68 && this.xTransform < this.sizeToRemove) {
           this._closeOpenedForDelete();
-          item.style.transitionDuration = '.2s';
+          item.style.transitionDuration = '.15s';
           item.setAttribute('aria-label', 'for-delete');
           deleteButton.classList.add('todo__delete-button_active');
           item.style.transform = `translateX(-68px)`;
@@ -206,6 +205,7 @@ class Todos {
 
         // до 68px - возврат в исходное состояние 
         else {
+          item.classList.remove('todo__item_active');
           deleteButton.classList.remove('todo__delete-button_active');
           this._close(item);
         }

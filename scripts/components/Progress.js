@@ -17,16 +17,14 @@ class Progress {
 
   _updateTotal(number) {
     this.total = number;
-    // console.log(`total ${this.total}`);
   }
 
   _updateActive(number) {
     this.active = number;
-    // console.log(`active ${this.active}`);
   }
 
   _createItem() {
-    const progressBar = this._createElement('div', 'progress__bar');
+    const progressBar = this._createElement('div', 'progress_bar');
     this.container.appendChild(progressBar);
     this.progressBar = progressBar;
     return progressBar;
@@ -38,6 +36,8 @@ class Progress {
       let progressPersent = allWidth / this.total * this.active * 100 / allWidth;
       this.progressBar.style.width = `${progressPersent}%`;
     }
-    else this.progressBar.style.width = '0px';
+    else {
+      this.progressBar.style.width = '0px';
+    };
   }
 }

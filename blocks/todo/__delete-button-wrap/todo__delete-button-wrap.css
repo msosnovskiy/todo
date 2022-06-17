@@ -14,5 +14,5 @@
   animation-timing-function: cubic-bezier(.56,.31,.53,.82);
   border-radius: 2px;
   top: 1px;
-  opacity: .4;
+  /* opacity: .6; */
 }

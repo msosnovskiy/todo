@@ -1,7 +1,7 @@
 @import url(./__header/todo__header.css);
 @import url(./__user/todo__user.css);
 @import url(./__name/todo__name.css);
-@import url(./__delete/todo__delete.css);
+@import url(./__more/todo__more.css);
 @import url(./__dates/todo__dates.css);
 @import url(./__date/todo__date.css);
 @import url(./__hour/todo__hour.css);

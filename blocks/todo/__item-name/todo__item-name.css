@@ -10,6 +10,6 @@
 }
 
 .todo__item-name_checked {
-  text-decoration-line: line-through;
+  /* text-decoration-line: line-through; */
   color: var(--gray);
 }
