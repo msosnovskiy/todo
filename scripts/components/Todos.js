@@ -77,7 +77,7 @@ class Todos {
       }
 
       clearInterval(removeInt);
-    }, 300);
+    }, 350);
 
   }
 
@@ -86,6 +86,10 @@ class Todos {
   }
 
   _getCheckedTodos() {
+    // без переноса в раздел выполнено
+    // return this.container.querySelectorAll('.todo__check-button_checked').length;
+
+    // с переносом в раздел выполнено лучше искать в данном DOM
     return this.doneContainer.querySelectorAll('.todo__check-button_checked').length;
   }
 
@@ -141,8 +145,14 @@ class Todos {
 
     checkButton.addEventListener('click', () => {
       this._closeOpenedForDelete(deleteButton);
+
+      // без переноса в раздел выполнено
+      // this._switchCheckButton(checkButton, name);
+      
+      // с переносом в раздел выполнено!
       this._switchCheckButton(checkButton, name) ? this.processContainer.appendChild(todo) : this.doneContainer.appendChild(todo);
       this._getCheckedTodos() > 0 ? this.doneContainer.classList.add('todo__done_visible') : this.doneContainer.classList.remove('todo__done_visible');
+
       this.progressBar._updateActive(this._getCheckedTodos());
       this.progressBar._update();
     });

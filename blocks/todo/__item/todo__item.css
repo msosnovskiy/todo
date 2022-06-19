@@ -4,8 +4,7 @@
   }
 
   100% {
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04);
-
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -16,7 +15,7 @@
   padding: 16px;
   border-radius: 16px;
   background-color: var(--white);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
   margin: 8px auto 0px;
   animation: newItem .3s ease-in;
 

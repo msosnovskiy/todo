@@ -33,7 +33,7 @@ class FormValidator {
         return;
       }
   
-      this.container.prepend(this.todo._create(this.input.value));
+      this.container.appendChild(this.todo._create(this.input.value));
       this.input.value = '';
       this.setSubmitButtonState(this.button, false);
       this.progress._updateTotal(this.todo._getAllTodos());

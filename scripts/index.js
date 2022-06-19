@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const element = new Element();
   const progress = new Progress(progressBar);
   const todos = new Todos(element, todoLists, progress, process, done);
-  const formValidator = new FormValidator(todoLists, form, addItemButton, input, todos, progress);
+  const formValidator = new FormValidator(process, form, addItemButton, input, todos, progress);
   const switchPosition = new SwitchPosition(SwitchPositionButton);
 
   progress._createItem();
