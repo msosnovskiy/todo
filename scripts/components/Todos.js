@@ -33,7 +33,6 @@ class Todos {
     this.deleteButton = deleteButton;
     this.deleteWrap = deleteWrap;
     this._setEventListeners(this.todo, this.item, this.name, this.checkButton, this.deleteWrap, this.deleteButton);
-    // this._setEventListeners();
 
     return todo;
   }
@@ -41,7 +40,6 @@ class Todos {
   _close(element) {
     element.style.transform = '';
     element.style.transitionDuration = '.2s';
-    element.classList.remove('todo__item_active');
     element.removeAttribute('aria-label');
   }
 
@@ -124,7 +122,6 @@ class Todos {
     item.style.transitionDuration = '0s';
     if (xDiff <= 0) {
       // двтижение left
-      item.classList.add('todo__item_active');
       item.style.transform = `translateX(${xDiff}px)`;
     }
     
@@ -133,7 +130,6 @@ class Todos {
       if (xDiff > 0) {
         xDiff = 0;
       }
-      item.classList.remove('todo__item_active');
       item.style.transform = `translateX(${xDiff}px)`;
     };
   }
@@ -216,7 +212,6 @@ class Todos {
 
         // до 68px - возврат в исходное состояние 
         else {
-          item.classList.remove('todo__item_active');
           deleteButton.classList.remove('todo__delete-button_active');
           this._close(item);
         }

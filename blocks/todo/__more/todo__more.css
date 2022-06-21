@@ -4,15 +4,14 @@
   border-radius: 8px;
   position: relative;
   background-image: url(../../../images/more.svg);
+  background-position: center;
   background-repeat: no-repeat;
-  /* background-position: right; */
   min-width: 30px;
   min-height: 30px;
-  background-color: transparent;
-  background-color: var(--white);
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  background-color: #041121;
+  filter: drop-shadow(0px 0px 4px rgba(7, 100, 231, 0.25));
   border: none;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   padding: 0;
-
 }

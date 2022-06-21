@@ -2,7 +2,8 @@
   padding: 20px 88px 20px 16px;
   border-radius: 16px;
   border-color: transparent;
-  background-color: var(--white);
+  background-color: var(--dark-blue);
+  color: var(--white);
   width: 100%;
   min-height: 68px;
   position: relative;
@@ -10,17 +11,17 @@
 }
 
 .todo__new-item::-moz-placeholder {
-  color: var(--gray);
+  color: var(--dark-accent);
   font-size: 20px;
 }
 
 .todo__new-item::-webkit-input-placeholder {
-  color: var(--gray);
+  color: var(--dark-accent);
   font-size: 20px;
 }
 
 .todo__new-item:-ms-input-placeholder {
-  color: var(--gray);
+  color: var(--dark-accent);
   /* color: #E7EAEF; */
   font-size: 20px;
 }

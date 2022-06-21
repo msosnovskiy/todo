@@ -1,15 +1,13 @@
 .todo__item-name {
   margin: 0;
   width: 100%;
-  font-family: 'Inter';
-  font-size: 20px;
   margin-right: 16px;
+  font-size: 20px;
   border: none;
   padding: 0;
   transition: color 0.2s linear; 
 }
 
 .todo__item-name_checked {
-  /* text-decoration-line: line-through; */
-  color: var(--gray);
+  color: var(--dark-accent);
 }

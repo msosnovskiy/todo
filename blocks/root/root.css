@@ -1,10 +1,10 @@
 .root {
-  background-color: #F8FAFE;
-  color: #16161F;
+  background-color: #041121;
+  color: #F7F5FC;
   font-weight: 500;
   margin: 0 auto;
   padding: 60px 16px 80px;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;

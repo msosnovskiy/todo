@@ -1,8 +1,7 @@
 .todo__done-title {
   text-align: center;
-  font-family: 'Montserrat';
-  font-weight: 700;
-  color: var(--gray);
+  /* color: var(--gray); */
+  color: var(--dark-accent);
   font-size: 20px;
   margin: 40px auto 8px;
   padding: 4px 16px;
