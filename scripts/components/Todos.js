@@ -6,7 +6,8 @@ class Todos {
     this.processContainer = processContainer;
     this.doneContainer = doneContainer;
     this.xTransform = 0;
-    this.sizeToRemove = this.container.offsetWidth * 0.33;
+    // this.sizeToRemove = this.container.offsetWidth * 0.33;
+    this.sizeToRemove = 128;
     this.touched = false;
   }
 
