@@ -1,13 +1,18 @@
 .todo__item-name {
   margin: 0;
-  width: 100%;
+  max-width: 100%;
   margin-right: 16px;
   font-size: 20px;
+  line-height: 28px;
   border: none;
   padding: 0;
   transition: color 0.2s linear; 
+
+  display: block;
+
 }
 
+
 .todo__item-name_checked {
-  color: var(--dark-accent);
+  color: var(--gray);
 }

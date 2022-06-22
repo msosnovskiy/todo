@@ -29,10 +29,10 @@ class FormValidator {
 
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
-        if (!this.input.value) {
+      if (!this.input.value) {
         return;
       }
-  
+
       this.container.appendChild(this.todo._create(this.input.value));
       this.input.value = '';
       this.setSubmitButtonState(this.button, false);

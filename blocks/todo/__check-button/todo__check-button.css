@@ -10,8 +10,8 @@
 }
 
 .todo__check-button_checked {
-  position: relative;
-  border: 2px solid var(--dark-accent);
+  border: 2px solid var(--accent);
+  background-color: var(--accent);
   background-image: url(../../../images/checked.svg);
   background-repeat: no-repeat;
   background-position: center;

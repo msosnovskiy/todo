@@ -11,17 +11,17 @@
 }
 
 .todo__new-item::-moz-placeholder {
-  color: var(--dark-accent);
+  color: var(--gray);
   font-size: 20px;
 }
 
 .todo__new-item::-webkit-input-placeholder {
-  color: var(--dark-accent);
+  color: var(--gray);
   font-size: 20px;
 }
 
 .todo__new-item:-ms-input-placeholder {
-  color: var(--dark-accent);
+  color: var(--gray);
   /* color: #E7EAEF; */
   font-size: 20px;
 }

@@ -96,7 +96,7 @@ class Todos {
     return element.style.transform.replace(/[^-*\d.]/g, '');
   }
 
-  _switchCheckButton(checkButton, todoTitle) {
+  _switchCheckButton(checkButton, todoTitle, item) {
     if (checkButton.closest('.todo__check-button_checked')) {
       todoTitle.classList.remove('todo__item-name_checked');
       checkButton.classList.remove('todo__check-button_checked');
@@ -106,7 +106,7 @@ class Todos {
     else {
       todoTitle.classList.add('todo__item-name_checked');
       checkButton.classList.add('todo__check-button_checked');
-      // был чекнут? ДА
+      // был чекнут? НЕТ
       return false;
     }
   }
@@ -124,7 +124,7 @@ class Todos {
       // двтижение left
       item.style.transform = `translateX(${xDiff}px)`;
     }
-    
+
     // двтижение right
     else {
       if (xDiff > 0) {
@@ -145,9 +145,11 @@ class Todos {
 
       // без переноса в раздел выполнено
       // this._switchCheckButton(checkButton, name);
-      
+
       // с переносом в раздел выполнено!
-      this._switchCheckButton(checkButton, name) ? this.processContainer.appendChild(todo) : this.doneContainer.appendChild(todo);
+      this._switchCheckButton(checkButton, name, item) ? this.processContainer.appendChild(todo) : this.doneContainer.appendChild(todo);
+
+
       this._getCheckedTodos() > 0 ? this.doneContainer.classList.add('todo__done_visible') : this.doneContainer.classList.remove('todo__done_visible');
 
       this.progressBar._updateActive(this._getCheckedTodos());
@@ -186,7 +188,7 @@ class Todos {
         event.preventDefault();
         this._move(item, xDiff);
       }
-      
+
     }, false);
 
 
@@ -228,6 +230,7 @@ class Todos {
     item.addEventListener('click', (event) => {
       // проверка на клик по Todo 
       if (event.target !== checkButton) {
+        // event.preventDefault();
         this._closeOpenedForDelete();
       }
       else return;
