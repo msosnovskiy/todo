@@ -17,12 +17,16 @@ class NewTodo {
     //   clearInterval(focus);
     // }, 300);
 
-   }
+  }
 
   _closeForm() {
     this.input.classList.remove('new__input_active');
     this.button.classList.remove('new__button_active');
-    this.button.textContent = "Создать";
+
+    let setButtonText = setInterval(() => {
+      clearInterval(setButtonText);
+      this.button.textContent = "Создать";
+    }, 150);
   }
 
   setEventListeners() {
