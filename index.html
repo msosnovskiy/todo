@@ -18,9 +18,15 @@
   </header>
 
   <main>
-    <section class="new">
+    <!-- <section class="new">
       <button class="button button_new">Новый</button>
-    </section>
+    </section> -->
+
+    <form class="new">
+      <input class="new__input" type="text" placeholder="Введите тему"></input>
+      <button class="new__button" type="submit">Создать</button>
+    </form>
+
     <section class="content">
 
       <div class="todo">
@@ -38,7 +44,7 @@
         <div class="progress"></div>
 
         <form class="todo__form">
-          <input class="todo__new-item" type="text" placeholder="Что-то еще?" class=""></input>
+          <input class="todo__new-item" type="text" placeholder="Что-то еще?"></input>
           <button class="todo__add-button" type="submit" disabled="true"></button>
         </form>
 
@@ -89,6 +95,7 @@
 
 
   <script src="./scripts/components/Element.js"></script>
+  <script src="./scripts/components/NewTodo.js"></script>
   <script src="./scripts/components/Header.js"></script>
   <script src="./scripts/components/FormValidator.js"></script>
   <script src="./scripts/components/Progress.js"></script>

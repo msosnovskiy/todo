@@ -1,0 +1,10 @@
+@import url(./__input/new__input.css);
+@import url(./__button/new__button.css);
+
+.new {
+  margin: 40px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 16px;
+}

@@ -1,7 +1,6 @@
-@import url(./_new/button_new.css);
 @import url(./_add/button_add.css);
 @import url(./_change/button_change.css);
 
 .button {
-  border-radius: 100px;
+  border-radius: 16px;
 }
