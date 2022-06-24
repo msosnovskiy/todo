@@ -6,16 +6,15 @@ class Todos {
     this.processContainer = processContainer;
     this.doneContainer = doneContainer;
     this.xTransform = 0;
-    // this.sizeToRemove = this.container.offsetWidth * 0.33;
     this.sizeToRemove = 128;
     this.touched = false;
   }
-
 
   _create(text) {
     const todo = this.constructor._create('div', 'todo__wrap');
     const item = this.constructor._create('div', 'todo__item');
     const name = this.constructor._create('p', 'todo__item-name', text);
+
     const checkButton = this.constructor._create('button', 'todo__check-button');
     const deleteWrap = this.constructor._create('div', 'todo__delete-button-wrap');
     const deleteButton = this.constructor._create('button', 'todo__delete-button');

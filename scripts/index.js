@@ -19,5 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
   formValidator.setEventListeners();
   switchPosition.setEventListeners();
 
+
+  // var tx = document.getElementsByTagName('textarea');//РАСТЯГИВАЕМ_textarea
+
+  // console.log(tx[0]);
+
+  // tx[0].style.height = tx[0].scrollHeight;
+  // tx[0].addEventListener("input", () => {
+
+  //   tx[0].style.height = (tx[0].scrollHeight) + 'px';
+  // });
+
 });
 
