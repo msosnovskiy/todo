@@ -1,8 +1,10 @@
 class NewTodoFormValidator {
-  constructor(container, form, todo) {
+  constructor(body, container, form, todo, switchButton) {
+    this.body = body;
     this.container = container;
     this.form = form;
     this.todo = todo;
+    this.switchButton = switchButton;
     this.input = this.form.querySelector('.new__input');
     this.button = this.form.querySelector('.new__button');
     this.formActive = false;
@@ -11,12 +13,14 @@ class NewTodoFormValidator {
   _openForm() {
     this.input.classList.add('new__input_active');
     this.button.classList.add('new__button_opened');
-    this.input.focus();
     this.button.textContent = "";
+    this.button.setAttribute('disabled', 'true');
+    this.input.focus();
   }
 
   _closeForm() {
     this.input.classList.remove('new__input_active');
+    this.button.removeAttribute('disabled');
     this.button.classList.remove('new__button_opened');
     this.button.classList.remove('new__button_active');
     this.input.blur();
@@ -30,16 +34,21 @@ class NewTodoFormValidator {
   }
 
   _switchButton() {
+    // анимация перемещения кнопки создать при добавлении todo
     const elements = this.container.querySelectorAll('.todo').length;
 
     if (elements > 0 ) {
       let setButtonAnimation = setInterval(() => {
         this.form.classList.add('new_not-empty')
+        this.body.classList.add('root_not-empty');
+        this.switchButton.style.visibility = 'visible';
         clearInterval(setButtonAnimation);
       }, 200);
     }
     else {
       this.form.classList.remove('new_not-empty');
+      this.body.classList.remove('root_not-empty');
+      this.switchButton.style.visibility = 'hidden';
     }
   }
 
@@ -47,9 +56,12 @@ class NewTodoFormValidator {
 
     this.form.addEventListener('input', () => {
       if (this.input.value.length > 0) {
+        this.button.removeAttribute('disabled');
         this.button.classList.add('new__button_active');
         this.formActive = true;
       } else {
+        this.button.setAttribute('disabled', 'true');
+        this.button.removeAttribute('disabled');
         this.button.classList.remove('new__button_active');
         this.formActive = false;
       }

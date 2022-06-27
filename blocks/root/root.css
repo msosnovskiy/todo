@@ -3,7 +3,7 @@
   color: #F7F5FC;
   font-weight: 500;
   margin: 0 auto;
-  padding: 60px 16px 80px;
+  padding: 0 16px;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -11,6 +11,10 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  /* overflow: hidden; */
   max-width: 800px;
+  overflow: hidden;
+}
+
+.root_not-empty {
+  overflow: scroll;
 }

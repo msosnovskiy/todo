@@ -8,10 +8,10 @@
   justify-content: center;
   border-radius: 16px;
 
-  margin: 40vh auto 30px;
+  margin: calc(50vh - 27px) auto 30px;
   transition: margin 0.2s ease-out;
 }
 
 .new_not-empty {
-  margin: 40px auto 30px;
+  margin: 92px auto 30px;
 }

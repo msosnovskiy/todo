@@ -19,18 +19,31 @@
   z-index: 1;
 }
 
+.new__button:hover {
+  background-color: #005CCC;
+}
+
 .new__button_opened {
   right: 27px;
   background-color: var(--dark-accent);
   width: 54px;
   border-radius: 16px;
+  cursor: unset;
+}
+.new__button_opened:hover {
+  background-color: var(--dark-accent);
 }
 
 .new__button_active {
+  cursor: pointer;
   right: 27px;
   box-shadow: 0px 0px 6px rgba(7, 100, 231, 0.25);
   background-color: var(--accent);
   width: 54px;
+}
+
+.new__button_active:hover {
+  background-color: #005CCC;
 }
 
 .new__button_opened::before {
