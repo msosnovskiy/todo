@@ -13,6 +13,6 @@
   left: 0;
   height: 62px;
 
-  backdrop-filter: blur(1px);
- -webkit-backdrop-filter: blur(1px);
+  /* backdrop-filter: blur(1px);
+ -webkit-backdrop-filter: blur(1px); */
 }
