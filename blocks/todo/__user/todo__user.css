@@ -3,10 +3,10 @@
   background-color: #066AFE;
   border-radius: 50px;
   min-width: 24px;
-  height: 24px;
-  font-size: 12px;
-  font-family: 'Montserrat';
+  min-height: 24px;
+  padding: 6px;
   font-weight: 700;
+  font-size: 12px;
   line-height: 12px;
   display: flex;
   align-items: center;

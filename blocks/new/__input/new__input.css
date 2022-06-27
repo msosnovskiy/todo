@@ -1,23 +1,19 @@
 .new__input {
   height: 54px;
-  /* border: 2px solid var(--accent); */
-  /* background-color: transparent; */
-  border: none;
   background-color: var(--dark-blue);
   color: var(--white);
+  border: none;
   font-size: 20px;
   padding: 8px 24px;
   width: inherit;
   width: 54px;
-  border-radius: 16px;
-  /* border-radius: 50px; */
-  /* transition: width .2s ease, border-radius .2s ease; */
-  transition: width .2s ease;
+  border-radius: 50px;
+  transition: width .2s ease, border-radius .2s ease;
 }
 
 .new__input_active {
   width: 100%;
-  /* border-radius: 16px; */
+  border-radius: 16px;
 }
 
 .new__input::-moz-placeholder {

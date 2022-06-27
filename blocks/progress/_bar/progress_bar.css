@@ -3,6 +3,7 @@
   height: calc(100% + 2px);
   border-radius: 4px;
   background: linear-gradient(270deg, #117cff 0%, #0647a8 100%);
+  /* background: linear-gradient(270deg, #338FFF 0%, #005CCC 100%); */
   transition: width 0.4s ease;
   position: absolute;
   top: -1px;

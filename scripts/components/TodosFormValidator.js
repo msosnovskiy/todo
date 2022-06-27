@@ -1,4 +1,4 @@
-class FormValidator {
+class TodosFormValidator {
   constructor(container, form, button, input, todo, progress) {
     this.container = container;
     this.form = form;
@@ -32,7 +32,6 @@ class FormValidator {
       if (!this.input.value) {
         return;
       }
-
       this.container.appendChild(this.todo._create(this.input.value));
       this.input.value = '';
       this.setSubmitButtonState(this.button, false);

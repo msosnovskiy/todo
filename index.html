@@ -23,13 +23,13 @@
     </section> -->
 
     <form class="new">
-      <input class="new__input" type="text" placeholder="Введите тему"></input>
+      <input tabindex="-1" class="new__input" type="text" placeholder="Введите тему"></input>
       <button class="new__button" type="submit">Создать</button>
     </form>
 
     <section class="content">
 
-      <div class="todo">
+      <!-- <div class="todo">
         <div class="todo__header">
           <p class="todo__user">ж</p>
           <p class="todo__name">Список дел</p>
@@ -53,7 +53,8 @@
 
           <div class="todo__done">
             <p class="todo__done-title">Выполнено</p>
-          </div>
+          </div> -->
+
           <!-- <div class="todo__item">
             <input type="text" class="todo__item-name" value="Макаронные изделия"></input>
             <button class="todo__check-button"></button>
@@ -96,8 +97,9 @@
 
   <script src="./scripts/components/Element.js"></script>
   <script src="./scripts/components/NewTodo.js"></script>
+  <script src="./scripts/components/NewTodoFormValidator.js"></script>
   <script src="./scripts/components/Header.js"></script>
-  <script src="./scripts/components/FormValidator.js"></script>
+  <script src="./scripts/components/TodosFormValidator.js"></script>
   <script src="./scripts/components/Progress.js"></script>
   <script src="./scripts/components/Todos.js"></script>
   <script src="./scripts/components/SwitchPosition.js"></script>
