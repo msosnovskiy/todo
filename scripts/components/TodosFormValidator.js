@@ -24,9 +24,9 @@ class TodosFormValidator {
         this.setSubmitButtonState(this.button, true);
       } else {
         this.setSubmitButtonState(this.button, false);
-      }
+      };
     });
-
+    
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!this.input.value) {

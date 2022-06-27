@@ -1,8 +1,9 @@
 class NewTodo {
-  constructor(constructor, progress, todos) {
+  constructor(constructor, progress, todos, TodosFormValidator) {
     this.constructor = constructor;
     this.progress = progress;
     this.todos = todos;
+    this.TodosFormValidator = TodosFormValidator;
   }
 
   _create(text) {
@@ -15,7 +16,7 @@ class NewTodo {
     const date = this.constructor._create('p', 'todo__date');
     const hour = this.constructor._create('p', 'todo__hour');
     const progress = this.constructor._create('div', 'progress');
-    this.progress(progress);
+
     const todoForm = this.constructor._create('form', 'todo__form');
     const todoFormInput = this.constructor._create('input', 'todo__new-item');
     todoFormInput.placeholder = 'Что-то еще?';
@@ -23,10 +24,9 @@ class NewTodo {
     btnAdd.setAttribute('disabled', 'true');
     btnAdd.setAttribute('type', 'submit');
     const todoLists = this.constructor._create('div', 'todo__lists');
-    const todoProgress = this.constructor._create('div', 'todo__process');
+    const todoProcess = this.constructor._create('div', 'todo__process');
     const todoDone = this.constructor._create('div', 'todo__done');
     const todoDoneTitle = this.constructor._create('p', 'todo__done-title', 'Выполнено');
-    this.todos()
 
     todo.appendChild(todoHeader);
     todoHeader.appendChild(todoUser);
@@ -44,9 +44,14 @@ class NewTodo {
     todoForm.appendChild(btnAdd);
 
     todo.appendChild(todoLists);
-    todoLists.appendChild(todoProgress);
+    todoLists.appendChild(todoProcess);
     todoLists.appendChild(todoDone);
     todoDone.appendChild(todoDoneTitle);
+
+    const progressBar = this.progress(progress);
+    progressBar._createItem();
+    const createTodos = this.todos(this.constructor, todoLists, progressBar, todoProcess, todoDone);
+    this.TodosFormValidator(todoProcess, todoForm, btnAdd, todoFormInput, createTodos, progressBar).setEventListeners();
 
     return todo
   }

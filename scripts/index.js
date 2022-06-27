@@ -10,25 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.querySelector('.progress');
   const process = document.querySelector('.todo__process');
   const done = document.querySelector('.todo__done');
-
+  
   const element = new Element();
-
+  
   const progress = (...arg) => new Progress(...arg);
   const todos = (...arg) => new Todos(...arg);
-
-  const newTodo = new NewTodo(element, progress, todos);
+  const todosFormValidator = (...arg) => new TodosFormValidator(...arg);
+  
+  const newTodo = new NewTodo(element, progress, todos, todosFormValidator);
   const newTodoFormValidator = new NewTodoFormValidator(rootContainer, form, newTodo);
-  
-  
-
-  // const todos = new Todos(element, todoLists, progress, process, done);
-  const todosFormValidator = new TodosFormValidator(process, todoForm, addItemButton, input, todos, progress);
-
-
   const switchPosition = new SwitchPosition(SwitchPositionButton);
 
+
+  // const progress = new Progress(progressBar);
+  // const todos = new Todos(element, todoLists, progress, process, done);
+  // const todosFormValidator = new TodosFormValidator(process, todoForm, addItemButton, input, todos, progress);
+
+
+
   newTodoFormValidator.setEventListeners();
-  todosFormValidator.setEventListeners();
+  // progress._createItem();
+  // todosFormValidator.setEventListeners();
   switchPosition.setEventListeners();
 
 
