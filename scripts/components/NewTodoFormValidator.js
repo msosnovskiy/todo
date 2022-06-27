@@ -29,6 +29,20 @@ class NewTodoFormValidator {
     }, 100);
   }
 
+  _switchButton() {
+    const elements = this.container.querySelectorAll('.todo').length;
+
+    if (elements > 0 ) {
+      let setButtonAnimation = setInterval(() => {
+        this.form.classList.add('new_not-empty')
+        clearInterval(setButtonAnimation);
+      }, 200);
+    }
+    else {
+      this.form.classList.remove('new_not-empty');
+    }
+  }
+
   setEventListeners() {
 
     this.form.addEventListener('input', () => {
@@ -52,6 +66,7 @@ class NewTodoFormValidator {
       else {
         if (this.input.value.length > 0) {
           this.container.prepend(this.todo._create(this.input.value));
+          this._switchButton();
         }
         // возврат к состоянию по умолчанию
 

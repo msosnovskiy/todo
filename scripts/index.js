@@ -27,6 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // const todosFormValidator = new TodosFormValidator(process, todoForm, addItemButton, input, todos, progress);
 
 
+  
+  const newButtonPosition = () => {
+    const elements = rootContainer.querySelectorAll('.todo');
+    console.log(elements.length);
+  }
+
+  newButtonPosition();
 
   newTodoFormValidator.setEventListeners();
   // progress._createItem();
